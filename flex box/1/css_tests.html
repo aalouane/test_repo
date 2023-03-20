@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Document</title>
+
+  <style>
+    p.p.p2 {
+      color: blueviolet;
+    }
+
+    p.p.p2.p3 {
+      color: yellowgreen;
+    }
+
+    /* the week elemen specificty, but with !important it became the most*/
+    p[id="p"] {
+      color: black !important;
+      font-size: 20px;
+    }
+
+    section p {
+      color: blue;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    section aside p{
+      /* color: revert; */
+      all: revert;
+      color: blueviolet;
+    }
+  </style>
+
+</head>
+
+<body>
+  <p class="p sentence p2 p3 p4 p5 p6 p7 p8 p9 p10 p11" id="p" style="color:aliceblue"> Lorem ipsum dolor sit amet
+    consectetur adipisicing elit. Minima necessitatibus obcaecati eveniet ipsam, dicta molestiae, similique ipsum
+    aliquid nam natus voluptates. Et repellendus sapiente nulla, a esse optio voluptas consectetur.</p>
+
+  <section>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima necessitatibus obcaecati eveniet ipsam, dicta
+      molestiae,
+      similique ipsum aliquid nam natus voluptates.
+    </p>
+
+    <aside>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima necessitatibus obcaecati eveniet ipsam, dicta
+        molestiae,
+        similique ipsum aliquid nam natus voluptates.
+      </p>
+    </aside>
+  </section>
+</body>
+
+</html>

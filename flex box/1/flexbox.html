@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Flexbox 0 — starting code</title>
+  <style>
+    html {
+      font-family: sans-serif;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    header {
+      background: purple;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* align-content: flex-start ; */
+    }
+
+    .flex-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    h1 {
+      /* text-align: center; */
+      color: white;
+      /* line-height: 100px; */
+      margin: 0;
+    }
+
+    section {
+      background-color: antiquewhite;
+      display: flex;
+      flex-direction: row;
+      /* Default value : nowrap */
+      flex-wrap: wrap;
+      /* no effect if all item are flexible or are fill into all given space */
+      justify-content: center;
+      /*  align items vertically if the container height is available*/
+      align-items: flex-end;
+      height: 80vh;
+    }
+
+    article {
+      padding: 10px;
+      margin: 10px;
+      background: aqua;
+
+      /* default 0 */
+      flex-grow: 1;
+      /* default 1 */
+      flex-shrink: 1;
+      /* The size of each element, controle the number of element by row when using flex-wrap: wrap*/
+      flex-basis: 25vw;
+    }
+
+    section article:nth-child(1) {
+      background-color: cadetblue;
+      order: 1;
+      /* align a specific item vertically(display : row) */
+      align-self: flex-end;
+    }
+
+    section article:nth-child(4) {
+      background-color: yellowgreen;
+      /* no effect here, the item content is big than to be resized */
+      align-self: flex-end;
+    }
+
+    section article:nth-child(2) {
+      background-color: coral;
+      order: 2;
+    }
+
+    nav ul li {
+      color: white;
+      background-color: cadetblue;
+      display: inline;
+      padding: 20px;
+      margin-right: 10px;
+    }
+
+    .second-section {
+      background-color: tomato;
+      /* width: 99.2vw; */
+      display: flex;
+      flex-wrap: wrap;
+      /* work with flex-grow and if we have extra space width */
+      justify-content: space-between;
+      justify-content: space-around;
+      justify-content: space-evenly;
+      justify-content: center;
+    }
+
+    .second-section article {
+      background-color: violet;
+      /* resize items */
+      /* If all items have flex-grow set to 1, the remaining space in the container will be distributed equally to all children. */
+      /* If one of the children has a value of 2, that child would take up twice as much of the space either one of the others (or it will try, at least). */
+      flex-grow: 0;
+      /* need the flex-grow */
+      flex-basis: 25vw;
+    }
+
+    .second-section .last-article{
+      flex-grow: 1;
+      background-color: red !important;
+    }
+
+    #last-article{
+      background-color: cornflowerblue;
+    }
+    /* Add your flexbox CSS below here */
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="flex-row">
+
+      <h1>Sample flexbox example</h1>
+      <nav>
+        <ul>
+          <li> Home</li>
+          <li> About</li>
+          <li> Shopy</li>
+          <li> Contact </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section>
+    <article style="flex-grow: 1;">
+      <h2>First article</h2>
+
+      <p>Tacos actually microdosing, pour</p>
+    </article>
+
+    <article>
+      <h2>Second article</h2>
+
+      <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack
+        portland everyday carry
+        vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid
+        single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health
+        goth gastropub hammock.</p>
+    </article>
+
+    <article>
+      <h2>Third article</h2>
+
+      <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack
+        portland everyday carry
+        vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid
+        single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health
+        goth gastropub hammock.</p>
+    </article>
+
+    <article>
+      <h2>Fourth article</h2>
+
+      <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack
+        portland everyday carry
+        vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid
+        single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health
+        goth gastropub hammock.</p>
+    </article>
+
+    <article>
+      <h2>Fifth article</h2>
+
+      <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack
+        portland everyday carry
+        vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid
+        single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health
+        goth gastropub hammock.</p>
+    </article>
+
+    <article>
+      <h2>Sixth article</h2>
+
+      <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack
+        portland everyday carry
+        vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid
+        single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health
+        goth gastropub hammock.</p>
+    </article>
+
+    <article>
+      <h2>Seventh article</h2>
+
+      <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack
+        portland everyday carry
+        vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid
+        single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health
+        goth gastropub hammock.</p>
+    </article>
+
+
+  </section>
+
+  <div class="second-section">
+    <article>
+      <h2>First article Section 2</h2>
+      <p>Tacos actually microdosing, pour</p>
+    </article>
+
+    <article>
+      <h2>Second article Section 2</h2>
+      <p>Tacos actually microdosing, pour-over semiotics banjo . pour-over semiotics banjo, pour-over semiotics banjo,
+        pour-over semiotics banjo, pour-over semiotics banjo</p>
+    </article>
+
+    <article>
+      <h2>Third article Section 2</h2>
+      <p>Tacos actually microdosing, pour-over semiotics </p>
+    </article>
+
+    <article class="last-article" style="background-color: aqua;" id="last-article" >
+      <h2>Fourth article Section 2</h2>
+      <p>Tacos actually microdosing, pour-over semiotics </p>
+    </article>
+  </div>
+</body>
+
+</html>
